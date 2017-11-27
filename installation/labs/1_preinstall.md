@@ -35,7 +35,7 @@ tmpfs            16G     0   16G   0% /sys/fs/cgroup
 /dev/xvdc        79G   57M   79G   1% /data/disk1
 tmpfs           3.2G     0  3.2G   0% /run/user/1000
 ```
-##Reverse Spacing 
+## Reverse Spacing 
 
 ```sh
 [root@ec2-54-208-253-250 ~]# lsblk -fm
@@ -47,14 +47,14 @@ xvdb    ext4         6ca740cc-c88b-4ed1-ba65-82100fcfce71 /data/disk xvdb     80
 xvdc    ext4         152ed96e-3f5c-4c8f-b31d-bdbda50a05c1 /data/disk xvdc     80G root  disk  brw-rw----
 ```
 
-##Chrony
+## Chrony
 
 ```sh
 [root@ec2-54-208-253-250 ~]# systemctl status chrony
 Unit chrony.service could not be found.
 ```
 
-##tuned
+## tuned
 
 ```sh
 [root@ec2-54-208-253-250 ~]# systemctl status tuned
@@ -63,14 +63,14 @@ Unit chrony.service could not be found.
    Active: inactive (dead)
 ```
 
-##firewalld
+## firewalld
 
 ```sh
 [root@ec2-54-208-253-250 ~]# systemctl status firewalld
 Unit firewalld.service could not be found.
 ```
 
-##HugePage
+## HugePage
 
 ```sh
 [root@ec2-54-208-253-250 ~]# cat /sys/kernel/mm/transparent_hugepage/enabled 
@@ -81,7 +81,7 @@ always madvise [never]
 ```
 
 
-##Hosts
+## Hosts
 
 ```sh
 [root@ec2-54-208-253-250 ~]# getent hosts
@@ -98,7 +98,7 @@ always madvise [never]
 ```
 
 
-##nscd
+## nscd
 
 ```sh
 [root@ec2-54-208-253-250 ~]# systemctl status nscd
@@ -123,7 +123,7 @@ Nov 27 13:36:30 ec2-54-208-253-250.compute-1.amazonaws.com nscd[609]: 609 checki
 Hint: Some lines were ellipsized, use -l to show in full.
 ```
 
-##ntpd
+## ntpd
 
 ```sh
 [root@ec2-54-208-253-250 ~]# systemctl status ntpd

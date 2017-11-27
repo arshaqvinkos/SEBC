@@ -149,3 +149,46 @@ Hint: Some lines were ellipsized, use -l to show in full.
 ```
 
 
+## Log and Opt Directory 
+
+```sh
+[root@ec2-54-208-253-250 ~]# ls /opt/
+[root@ec2-54-208-253-250 ~]# ls /var/log
+anaconda                    cron                maillog            secure-20171126
+audit                       cron-20171126       maillog-20171126   spooler
+boot.log                    dmesg               messages           spooler-20171126
+btmp                        dmesg.old           messages-20171126  tallylog
+choose_repo.log             grubby              ntpstats           tuned
+chrony                      grubby_prune_debug  qemu-ga            wtmp
+cloudera-manager-installer  kadmind.log         rhsm               yum.log
+cloud-init.log              lastlog             secure
+[root@ec2-54-208-253-250 ~]# mkdir -p /data/disk0/opt
+[root@ec2-54-208-253-250 ~]# cp -Rp /var/log /data/disk1/
+[root@ec2-54-208-253-250 ~]# ln -s -f /data/disk0/opt /opt
+[root@ec2-54-208-253-250 ~]# ln -s -f /data/disk1/log /var/log
+[root@ec2-54-208-253-250 ~]# mv /var/log /var/log.bak
+[root@ec2-54-208-253-250 ~]# ls -la /data/disk0/ /data/disk1/
+/data/disk0/:
+total 24
+drwxrwx---  4 root   hadoop  4096 Nov 27 15:01 .
+drwxr-xr-x. 4 root   root      32 Nov 23 15:24 ..
+drwx------  2 root   hadoop 16384 Nov 24 18:28 lost+found
+drwxr-xr-x  2 root   root    4096 Nov 27 15:01 opt
+-rw-r--r--  1 hduser hadoop     0 Nov 24 18:31 test
+
+/data/disk1/:
+total 24
+drwxrwx---   4 root   hadoop  4096 Nov 27 15:01 .
+drwxr-xr-x.  4 root   root      32 Nov 23 15:24 ..
+drwxr-xr-x  10 root   root    4096 Nov 27 13:36 log
+drwx------   2 root   hadoop 16384 Nov 24 18:28 lost+found
+-rw-r--r--   1 hduser hadoop     0 Nov 24 18:31 test
+[root@ec2-54-208-253-250 ~]# ls -la /opt /var/log
+ls: cannot access /var/log: No such file or directory
+/opt:
+total 0
+drwxr-xr-x.  2 root root  17 Nov 27 15:01 .
+dr-xr-xr-x. 18 root root 256 Nov 23 19:18 ..
+lrwxrwxrwx   1 root root  15 Nov 27 15:01 opt -> /data/disk0/opt
+[root@ec2-54-208-253-250 ~]# 
+``` 

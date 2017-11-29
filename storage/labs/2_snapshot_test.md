@@ -19,8 +19,10 @@ hdfs dfs -chown -R admin:admin  /user/admin/*
 ```
 ## Create SnapShot
 
+```sh
 [hdfs@ec2-54-208-253-250 ~]$ hdfs dfsadmin -allowSnapshot /user/admin/precious
 Allowing snaphot on /user/admin/precious succeeded
+
 
 [hdfs@ec2-54-208-253-250 ~]$ hdfs dfs -createSnapshot /user/admin/precious snap_test
 Created snapshot /user/admin/precious/.snapshot/snap_test

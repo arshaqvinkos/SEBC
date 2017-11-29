@@ -17,6 +17,14 @@ dfs dfs -put /home/hduser/sebc_master.zip /user/admin/precious/
 ```sh
 hdfs dfs -chown -R admin:admin  /user/admin/*
 ```
+## Create SnapShot
+
+[hdfs@ec2-54-208-253-250 ~]$ hdfs dfsadmin -allowSnapshot /user/admin/precious
+Allowing snaphot on /user/admin/precious succeeded
+
+[hdfs@ec2-54-208-253-250 ~]$ hdfs dfs -createSnapshot /user/admin/precious snap_test
+Created snapshot /user/admin/precious/.snapshot/snap_test
+```
 
 ## Delete directory after creating snapshot -Not able to delete
 
@@ -32,6 +40,8 @@ rm: Failed to move to trash: hdfs://ec2-34-235-121-19.compute-1.amazonaws.com:80
 [hdfs@ec2-54-208-253-250 ~]$ hdfs dfs -rm /user/admin/precious/sebc_master.zip
 17/11/28 12:12:03 INFO fs.TrashPolicyDefault: Moved: 'hdfs://ec2-34-235-121-19.compute-1.amazonaws.com:8020/user/admin/precious/sebc_master.zip' to trash at: hdfs://ec2-34-235-121-19.compute-1.amazonaws.com:8020/user/hdfs/.Trash/Current/user/admin/precious/sebc_master.zip
 ```
+
+## Restore Snapshot
 
 ## Listing files in precious directory after restoring
 

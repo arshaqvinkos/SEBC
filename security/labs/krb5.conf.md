@@ -1,3 +1,4 @@
+```sh
 [libdefaults]
 default_realm = VINKOS.COM
 dns_lookup_kdc = false
@@ -16,3 +17,4 @@ kdc = ec2-54-208-253-250.compute-1.amazonaws.com
 admin_server = ec2-54-208-253-250.compute-1.amazonaws.com
 }
 [domain_realm]
+```

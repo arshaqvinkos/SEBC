@@ -13,7 +13,7 @@ time hadoop jar  /opt/cloudera/parcels/CDH/lib/hadoop-0.20-mapreduce/hadoop-exam
 
 #Teragen Results
 ```sh
-[hdfs@ec2-54-208-253-250 ~]$ time hadoop jar  /opt/cloudera/parcels/CDH/lib/hadoop-0.20-mapreduce/hadoop-examples.jar teragen  -Dmapred.map.tasks=4 -Ddfs.block.size=1048576 100000000 /user/arshaqvinkos/teragen
+[hdfs@ec2-54-208-253-250 ~]$ time hadoop jar  /opt/cloudera/parcels/CDH/lib/hadoop-0.20-mapreduce/hadoop-examples.jar teragen  -Dmapred.map.tasks=4 -Ddfs.block.size=32000000 100000000 /user/arshaqvinkos/teragen
 17/11/28 11:29:32 INFO client.RMProxy: Connecting to ResourceManager at ec2-34-235-121-19.compute-1.amazonaws.com/172.31.33.222:8032
 17/11/28 11:29:33 INFO terasort.TeraGen: Generating 100000000 using 4
 17/11/28 11:29:33 INFO mapreduce.JobSubmitter: number of splits:4

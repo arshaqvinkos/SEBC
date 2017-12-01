@@ -1,6 +1,11 @@
+## Pi Command
 
 ```sh
 time hadoop jar /opt/cloudera/parcels/CDH/jars/hadoop-examples.jar pi 2 1000
+```
+## Pi Result
+
+```sh
 Number of Maps  = 2
 Samples per Map = 1000
 Wrote input for Map #0

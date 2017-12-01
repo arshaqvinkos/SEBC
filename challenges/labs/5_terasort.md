@@ -1,5 +1,12 @@
+## Teragen Command
+
 ```sh
  time hadoop jar /opt/cloudera/parcels/CDH/lib/hadoop-0.20-mapreduce/hadoop-examples.jar teragen 10000000 /user/saturn/tgen/new3
+```
+
+## Teragen Result
+
+```sh
 17/12/01 13:36:00 INFO client.RMProxy: Connecting to ResourceManager at ip-172-31-24-42.ec2.internal/172.31.24.42:8032
 17/12/01 13:36:01 INFO hdfs.DFSClient: Created token for saturn: HDFS_DELEGATION_TOKEN owner=saturn@ARSHAQVINKOS.HQ, renewer=yarn, realUser=, issueDate=1512156961068, maxDate=1512761761068, sequenceNumber=12, masterKeyId=2 on 172.31.24.42:8020
 17/12/01 13:36:01 INFO security.TokenCache: Got dt for hdfs://ip-172-31-24-42.ec2.internal:8020; Kind: HDFS_DELEGATION_TOKEN, Service: 172.31.24.42:8020, Ident: (token for saturn: HDFS_DELEGATION_TOKEN owner=saturn@ARSHAQVINKOS.HQ, renewer=yarn, realUser=, issueDate=1512156961068, maxDate=1512761761068, sequenceNumber=12, masterKeyId=2)
@@ -58,9 +65,17 @@
 real	0m26.540s
 user	0m4.328s
 sys	0m0.250s
+```
 
+## Terasort Command
 
--bash-4.2$ time hadoop jar /opt/cloudera/parcels/CDH/lib/hadoop-0.20-mapreduce/hadoop-examples.jar terasort /user/saturn/tgen/new3/* /user/saturn/tsort 
+```sh
+time hadoop jar /opt/cloudera/parcels/CDH/lib/hadoop-0.20-mapreduce/hadoop-examples.jar terasort /user/saturn/tgen/new3/* /user/saturn/tsort 
+```
+
+## Terasort Output
+
+```sh
 17/12/01 13:36:42 INFO terasort.TeraSort: starting
 17/12/01 13:36:43 INFO hdfs.DFSClient: Created token for saturn: HDFS_DELEGATION_TOKEN owner=saturn@ARSHAQVINKOS.HQ, renewer=yarn, realUser=, issueDate=1512157003645, maxDate=1512761803645, sequenceNumber=13, masterKeyId=2 on 172.31.24.42:8020
 17/12/01 13:36:43 INFO security.TokenCache: Got dt for hdfs://ip-172-31-24-42.ec2.internal:8020; Kind: HDFS_DELEGATION_TOKEN, Service: 172.31.24.42:8020, Ident: (token for saturn: HDFS_DELEGATION_TOKEN owner=saturn@ARSHAQVINKOS.HQ, renewer=yarn, realUser=, issueDate=1512157003645, maxDate=1512761803645, sequenceNumber=13, masterKeyId=2)
